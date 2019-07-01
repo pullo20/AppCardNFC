@@ -14,7 +14,7 @@ public static int harga = 2000;
 
         findViewById(R.id.btn_halte1).setOnClickListener(v -> {
             halte = "halte1";
-            Mhalte = "HALTE 2";
+            Mhalte = "HALTE 1";
             pindah();
         });
         findViewById(R.id.btn_halte2).setOnClickListener(v -> {
