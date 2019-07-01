@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TambahSaldoActivity">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#512da8"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/AppTheme.Toolbar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp">
+
+                <ImageView
+                    android:id="@+id/home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/ic_arrow_back_white_24dp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="260dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bus_image_3" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="100">
+
+                        <TextView
+                        android:text="TAMBAH SALDO"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="40sp"
+                        android:gravity="center"
+                        android:fontFamily="casual"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        />
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/jmlSaldo"
+                        android:layout_marginTop="20dp"
+                        android:layout_below="@+id/linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="60sp"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:layout_marginStart="@dimen/sisikiri"/>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_below="@+id/jmlSaldo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="25dp"
+                        app:cardCornerRadius="4dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="8dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_marginTop="20dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/btn5000"
+                                    android:layout_width="160dp"
+                                    android:layout_height="70dp"
+                                    android:text="@string/jumlah1"
+                                    android:textColor="@android:color/white"
+                                    android:background="@drawable/buttonshape"
+                                    android:gravity="center"
+                                    android:textSize="20sp"
+                                    tools:ignore="ButtonStyle"
+                                    android:layout_marginRight="10dp"/>
+                                <Button
+                                    android:id="@+id/btn10000"
+                                    android:layout_width="160dp"
+                                    android:layout_height="70dp"
+                                    android:text="@string/jumlah2"
+                                    android:gravity="center"
+                                    android:textSize="20sp"
+                                    android:textColor="@android:color/white"
+                                    android:background="@drawable/buttonshape"
+                                    tools:ignore="ButtonStyle"
+                                    android:layout_marginLeft="10dp"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_marginTop="20dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:layout_width="160dp"
+                                    android:layout_height="70dp"
+                                    android:text="@string/jumlah3"
+                                    android:textColor="@android:color/white"
+                                    android:background="@drawable/buttonshape"
+                                    android:gravity="center"
+                                    android:textSize="20sp"
+                                    tools:ignore="ButtonStyle"
+                                    android:id="@+id/btn15000"
+                                    android:layout_marginRight="10dp" />
+                                <Button
+                                    android:layout_width="160dp"
+                                    android:layout_height="70dp"
+                                    android:text="@string/jumlah4"
+                                    android:gravity="center"
+                                    android:textSize="20sp"
+                                    android:textColor="@android:color/white"
+                                    android:background="@drawable/buttonshape"
+                                    android:id="@+id/btn20000"
+                                    android:textAllCaps="false"
+                                    tools:ignore="ButtonStyle"
+                                    android:layout_marginLeft="10dp"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_marginTop="20dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <Button
+                                    android:layout_width="160dp"
+                                    android:layout_height="70dp"
+                                    android:text="@string/jumlah5"
+                                    android:textColor="@android:color/white"
+                                    android:background="@drawable/buttonshape"
+                                    android:gravity="center"
+                                    android:textSize="20sp"
+                                    tools:ignore="ButtonStyle"
+                                    android:id="@+id/btn50000"
+                                    android:layout_marginRight="10dp"/>
+                                <Button
+                                    android:layout_width="160dp"
+                                    android:layout_height="70dp"
+                                    android:text="@string/jumlah6"
+                                    android:gravity="center"
+                                    android:textSize="20sp"
+                                    android:textColor="@android:color/white"
+                                    android:background="@drawable/buttonshape"
+                                    android:id="@+id/btn100000"
+                                    android:textAllCaps="false"
+                                    tools:ignore="ButtonStyle"
+                                    android:layout_marginLeft="10dp"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
