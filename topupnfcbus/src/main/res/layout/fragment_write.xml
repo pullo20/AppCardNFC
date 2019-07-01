@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,13 +14,26 @@
         android:text="@string/message_write_tag"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-    <ImageView
+    <!--<ImageView-->
+        <!--android:id="@+id/logo"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="@dimen/activity_horizontal_margin"-->
+        <!--android:src="@drawable/ic_nfc"/>-->
+
+
+    <pl.droidsonroids.gif.GifImageView
         android:id="@+id/logo"
+        android:layout_centerInParent="true"
+        android:src="@drawable/nfc1"
+        android:padding="30dp"
+        android:layout_height="200dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/activity_horizontal_margin"
-        android:src="@drawable/ic_nfc"/>
+        tools:ignore="ContentDescription"/>
 
     <ProgressBar
         android:id="@+id/progress"

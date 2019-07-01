@@ -107,7 +107,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:layout_marginTop="25dp"
+                        android:layout_marginTop="45dp"
                         app:cardCornerRadius="4dp"
                         app:cardUseCompatPadding="true"
                         app:contentPadding="8dp">
