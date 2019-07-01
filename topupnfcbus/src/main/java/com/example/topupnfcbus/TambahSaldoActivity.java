@@ -1,8 +1,9 @@
-package pulo.cardnfcpnup;
+package com.example.topupnfcbus;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.nfc.FormatException;
@@ -14,6 +15,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +24,7 @@ import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-import pulo.cardnfcpnup.Fragment.FragmentTambahSaldo;
+import com.example.topupnfcbus.Fragment.FragmentTambahSaldo;
 
 public class TambahSaldoActivity extends AppCompatActivity implements Listener{
 
@@ -42,34 +44,52 @@ public class TambahSaldoActivity extends AppCompatActivity implements Listener{
         initNFC();
         jml_saldo = findViewById(R.id.jmlSaldo);
         button1 = findViewById(R.id.btn5000);
-        button1.setOnClickListener(v -> {
-            showDialog();
-            jumlah = "5000";
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialog();
+                jumlah = "5000";
+            }
         });
         button2 = findViewById(R.id.btn10000);
-        button2.setOnClickListener(v -> {
-            showDialog();
-            jumlah = "10000";
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TambahSaldoActivity.this.showDialog();
+                jumlah = "10000";
+            }
         });
         button3 = findViewById(R.id.btn15000);
-        button3.setOnClickListener(v -> {
-            showDialog();
-            jumlah = "15000";
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TambahSaldoActivity.this.showDialog();
+                jumlah = "15000";
+            }
         });
         button4 = findViewById(R.id.btn20000);
-        button4.setOnClickListener(v -> {
-            showDialog();
-            jumlah = "20000";
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TambahSaldoActivity.this.showDialog();
+                jumlah = "20000";
+            }
         });
         button5 = findViewById(R.id.btn50000);
-        button5.setOnClickListener(v -> {
-            showDialog();
-            jumlah = "50000";
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TambahSaldoActivity.this.showDialog();
+                jumlah = "50000";
+            }
         });
         button6 = findViewById(R.id.btn100000);
-        button6.setOnClickListener(v -> {
-            showDialog();
-            jumlah = "100000";
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TambahSaldoActivity.this.showDialog();
+                jumlah = "100000";
+            }
         });
 
 
@@ -103,11 +123,17 @@ public class TambahSaldoActivity extends AppCompatActivity implements Listener{
                 .setMessage("Jika Iya, Tekan Ya!")
                 .setIcon(R.drawable.ic_nfc_black_24dp)
                 .setCancelable(false)
-                .setPositiveButton("Ya", (dialog, id) -> {
-                    showTambahFragment();
+                .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        TambahSaldoActivity.this.showTambahFragment();
+                    }
                 })
-                .setNegativeButton("Tidak", (dialog, id) -> {
-                    dialog.cancel();
+                .setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
                 });
 
         AlertDialog alertDialog = alertDialogBuilder.create();

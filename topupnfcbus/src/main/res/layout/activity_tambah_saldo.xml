@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TambahSaldoActivity">
+    tools:context="com.example.topupnfcbus.TambahSaldoActivity">
 
 
     <android.support.design.widget.AppBarLayout
@@ -69,7 +69,6 @@
                         android:id="@+id/linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/textView"
                         android:layout_marginTop="8dp"
                         android:orientation="horizontal"
                         android:weightSum="100">
@@ -80,7 +79,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="40sp"
                         android:gravity="center"
-                        android:fontFamily="casual"
+                        android:fontFamily="@font/print_clearly"
                         android:textColor="@android:color/white"
                         android:textStyle="bold"
                         />
@@ -90,14 +89,17 @@
 
                     <TextView
                         android:id="@+id/jmlSaldo"
-                        android:layout_marginTop="20dp"
-                        android:layout_below="@+id/linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="60sp"
+                        android:layout_below="@+id/linearLayout"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="0dp"
+                        android:padding="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textAlignment="center"
                         android:textColor="@android:color/white"
-                        android:textStyle="bold"
-                        android:layout_marginStart="@dimen/sisikiri"/>
+                        android:textSize="50dp"
+                        android:textStyle="bold" />
 
                     <android.support.v7.widget.CardView
                         android:layout_below="@+id/jmlSaldo"
@@ -129,20 +131,16 @@
                                     android:text="@string/jumlah1"
                                     android:textColor="@android:color/white"
                                     android:background="@drawable/buttonshape"
-                                    android:gravity="center"
                                     android:textSize="20sp"
-                                    tools:ignore="ButtonStyle"
                                     android:layout_marginRight="10dp"/>
                                 <Button
                                     android:id="@+id/btn10000"
                                     android:layout_width="160dp"
                                     android:layout_height="70dp"
                                     android:text="@string/jumlah2"
-                                    android:gravity="center"
                                     android:textSize="20sp"
                                     android:textColor="@android:color/white"
                                     android:background="@drawable/buttonshape"
-                                    tools:ignore="ButtonStyle"
                                     android:layout_marginLeft="10dp"/>
                             </LinearLayout>
 
@@ -158,22 +156,18 @@
                                     android:text="@string/jumlah3"
                                     android:textColor="@android:color/white"
                                     android:background="@drawable/buttonshape"
-                                    android:gravity="center"
                                     android:textSize="20sp"
-                                    tools:ignore="ButtonStyle"
                                     android:id="@+id/btn15000"
                                     android:layout_marginRight="10dp" />
                                 <Button
                                     android:layout_width="160dp"
                                     android:layout_height="70dp"
                                     android:text="@string/jumlah4"
-                                    android:gravity="center"
                                     android:textSize="20sp"
                                     android:textColor="@android:color/white"
                                     android:background="@drawable/buttonshape"
                                     android:id="@+id/btn20000"
                                     android:textAllCaps="false"
-                                    tools:ignore="ButtonStyle"
                                     android:layout_marginLeft="10dp"/>
                             </LinearLayout>
 
@@ -188,9 +182,7 @@
                                     android:text="@string/jumlah5"
                                     android:textColor="@android:color/white"
                                     android:background="@drawable/buttonshape"
-                                    android:gravity="center"
                                     android:textSize="20sp"
-                                    tools:ignore="ButtonStyle"
                                     android:id="@+id/btn50000"
                                     android:layout_marginRight="10dp"/>
                                 <Button
@@ -203,7 +195,6 @@
                                     android:background="@drawable/buttonshape"
                                     android:id="@+id/btn100000"
                                     android:textAllCaps="false"
-                                    tools:ignore="ButtonStyle"
                                     android:layout_marginLeft="10dp"/>
                             </LinearLayout>
                         </LinearLayout>

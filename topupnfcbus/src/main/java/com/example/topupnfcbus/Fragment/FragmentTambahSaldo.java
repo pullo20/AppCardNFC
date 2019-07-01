@@ -1,4 +1,4 @@
-package pulo.cardnfcpnup.Fragment;
+package com.example.topupnfcbus.Fragment;
 
 import android.app.DialogFragment;
 import android.content.Context;
@@ -17,9 +17,9 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
-import pulo.cardnfcpnup.Listener;
-import pulo.cardnfcpnup.TambahSaldoActivity;
-import pulo.cardnfcpnup.R;
+import com.example.topupnfcbus.Listener;
+import com.example.topupnfcbus.TambahSaldoActivity;
+import com.example.topupnfcbus.R;
 
 public class FragmentTambahSaldo extends DialogFragment {
     
