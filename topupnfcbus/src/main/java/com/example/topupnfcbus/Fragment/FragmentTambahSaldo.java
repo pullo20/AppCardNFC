@@ -2,6 +2,7 @@ package com.example.topupnfcbus.Fragment;
 
 import android.app.DialogFragment;
 import android.content.Context;
+import android.content.Intent;
 import android.nfc.FormatException;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
@@ -11,6 +12,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -20,6 +22,8 @@ import java.nio.charset.Charset;
 import com.example.topupnfcbus.Listener;
 import com.example.topupnfcbus.TambahSaldoActivity;
 import com.example.topupnfcbus.R;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class FragmentTambahSaldo extends DialogFragment {
     
@@ -33,6 +37,7 @@ public class FragmentTambahSaldo extends DialogFragment {
     private TextView mTvMessage;
     private ProgressBar mProgress;
     private Listener mListener;
+    private LinearLayout linearLayout;
 
     @Nullable
     @Override
@@ -43,7 +48,7 @@ public class FragmentTambahSaldo extends DialogFragment {
     }
 
     private void initViews(View view) {
-
+        linearLayout = view.findViewById(R.id.linear);
         mTvMessage = view.findViewById(R.id.tv_message);
         mProgress =  view.findViewById(R.id.progress);
     }
@@ -79,6 +84,19 @@ public class FragmentTambahSaldo extends DialogFragment {
                 ndef.close();
                 //Write Successful
                 mTvMessage.setText(getString(R.string.message_write_success));
+                linearLayout.setVisibility(View.GONE);
+                mListener.onDialogDismissed();
+                final SweetAlertDialog loading = new SweetAlertDialog(getActivity(), SweetAlertDialog.SUCCESS_TYPE);
+                loading.setTitleText("Penambahan Berhasil!");
+                loading.setConfirmText("OK");
+                loading.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                        dismiss();
+                        loading.cancel();
+                    }
+                });
+                loading.show();
 
 
             } catch (IOException | FormatException e) {
